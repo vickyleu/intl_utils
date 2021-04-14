@@ -22,11 +22,13 @@ import 'intl/messages_all.dart';
 class $className {
   $className();
 
-  static $className? _current;
+  static $className _current;
+  //// static $className? _current;
 
   static $className get current {
     assert(_current != null, 'No instance of $className was loaded. Try to initialize the $className delegate before accessing $className.current.');
-    return _current!;
+    return _current;
+    // return _current!;
   }
 
   static const AppLocalizationDelegate delegate =
@@ -47,12 +49,16 @@ class $className {
   static $className of(BuildContext context) {
     final instance = $className.maybeOf(context);
     assert(instance != null, 'No instance of $className present in the widget tree. Did you add $className.delegate in localizationsDelegates?');
-    return instance!;
+    return instance;
+    // return instance!;
   }
 
-  static $className? maybeOf(BuildContext context) {
+  static $className maybeOf(BuildContext context) {
     return Localizations.of<$className>(context, $className);
   }
+  // static $className? maybeOf(BuildContext context) {
+  //   return Localizations.of<$className>(context, $className);
+  // }
 ${otaEnabled ? '\n${_generateMetadata(labels)}\n' : ''}
 ${labels.map((label) => label.generateDartGetter()).join("\n\n")}
 }
